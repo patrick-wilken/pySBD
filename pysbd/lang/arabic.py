@@ -9,8 +9,8 @@ class Arabic(Common, Standard):
 
     iso_code = 'ar'
 
-    Punctuations = ['?', '!', ':', '.', '؟', '،']
-    SENTENCE_BOUNDARY_REGEX = r'.*?[:\.!\?؟،]|.*?\Z|.*?$'
+    Punctuations = ['?', '!', ':', '.', '؟']
+    SENTENCE_BOUNDARY_REGEX = r'.*?[:\.!\?؟]|.*?\Z|.*?$'
 
     # Rubular: http://rubular.com/r/RX5HpdDIyv
     ReplaceColonBetweenNumbersRule = Rule(r'(?<=\d):(?=\d)', '♭')

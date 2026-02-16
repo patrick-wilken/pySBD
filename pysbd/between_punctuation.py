@@ -6,9 +6,9 @@ from pysbd.punctuation_replacer import replace_punctuation
 
 class BetweenPunctuation(object):
     # Rubular: http://rubular.com/r/2YFrKWQUYi
-    BETWEEN_SINGLE_QUOTES_REGEX = r"(?<=\s)'(?:[^']|'[a-zA-Z])*'"
+    BETWEEN_SINGLE_QUOTES_REGEX = r"((?<=\s)|^)'(?:[^']|'[a-zA-Z])*'"
 
-    BETWEEN_SINGLE_QUOTE_SLANTED_REGEX = r"(?<=\s)‘(?:[^’]|’[a-zA-Z])*’"
+    BETWEEN_SINGLE_QUOTE_SLANTED_REGEX = r"((?<=\s)|^)‘(?:[^’]|’[a-zA-Z])*’"
 
     # Rubular: http://rubular.com/r/3Pw1QlXOjd
     BETWEEN_DOUBLE_QUOTES_REGEX = r'"(?>[^"\\]+|\\{2}|\\.)*"'
@@ -70,7 +70,7 @@ class BetweenPunctuation(object):
 
     def sub_punctuation_between_single_quotes(self, txt):
         if re.search(self.WORD_WITH_LEADING_APOSTROPHE, txt) and \
-                (not re.search(r"'\s", txt)):
+                (not re.search(r"'(\s|ȸ)", txt)):
             return txt
         return re.sub(self.BETWEEN_SINGLE_QUOTES_REGEX,
                       partial(replace_punctuation, match_type='single'), txt)

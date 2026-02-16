@@ -9,7 +9,7 @@ class Common(object):
     SENTENCE_BOUNDARY_REGEX = r"（(?:[^）])*）(?=\s?[A-Z])|「(?:[^」])*」(?=\s[A-Z])|\((?:[^\)]){2,}\)(?=\s[A-Z])|\'(?:[^\'])*[^,]\'(?=\s[A-Z])|\"(?:[^\"])*[^,]\"(?=\s[A-Z])|\“(?:[^\”])*[^,]\”(?=\s[A-Z])|[。．.！!?？ ]{2,}|\S.*?[。．.！!?？ȸȹ☉☈☇☄]|[。．.！!?？]"
 
     # # Rubular: http://rubular.com/r/NqCqv372Ix
-    QUOTATION_AT_END_OF_SENTENCE_REGEX = r'[!?\.-][\"\'“”]\s{1}[A-Z]'
+    QUOTATION_AT_END_OF_SENTENCE_REGEX = r'[!?\.-][\"\'’“”]\s{1}[A-Z]'
 
     # # Rubular: http://rubular.com/r/6flGnUMEVl
     PARENS_BETWEEN_DOUBLE_QUOTES_REGEX = r'["\”]\s\(.*\)\s["\“]'
@@ -18,7 +18,7 @@ class Common(object):
     # BETWEEN_DOUBLE_QUOTES_REGEX = / "(?:[^"])*[^, ]"|“(?: [ ^”])*[^, ]”/
 
     # # Rubular: http://rubular.com/r/JMjlZHAT4g
-    SPLIT_SPACE_QUOTATION_AT_END_OF_SENTENCE_REGEX = r'(?<=[!?\.-][\"\'“”])\s{1}(?=[A-Z])'
+    SPLIT_SPACE_QUOTATION_AT_END_OF_SENTENCE_REGEX = r'(?<=[!?\.-][\"\'’“”])\s{1}(?=[A-Z])'
 
     # # Rubular: http://rubular.com/r/mQ8Es9bxtk
     CONTINUOUS_PUNCTUATION_REGEX = r'(?<=\S)(!|\?){3,}(?=(\s|\Z|$))'
